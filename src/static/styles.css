@@ -16,12 +16,37 @@ body {
 }
 
 header {
+  position: relative;
   text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+}
+
+.header-actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.auth-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  background-color: #ffffff;
+  color: #1a237e;
+}
+
+.auth-toggle-btn:hover {
+  background-color: #e8eaf6;
+}
+
+.auth-icon {
+  font-size: 16px;
 }
 
 header h1 {
@@ -164,6 +189,59 @@ button:hover {
   background-color: #3949ab;
 }
 
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 20;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+  color: #444;
+  padding: 4px 8px;
+}
+
+.auth-message {
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.auth-message.error {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}
+
+.info-box {
+  margin-bottom: 14px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
 .message {
   margin-top: 20px;
   padding: 10px;
@@ -197,4 +275,12 @@ footer {
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+@media (max-width: 768px) {
+  .header-actions {
+    position: static;
+    margin-bottom: 10px;
+    text-align: right;
+  }
 }
