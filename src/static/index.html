@@ -8,9 +8,46 @@
   </head>
   <body>
     <header>
+      <div class="header-actions">
+        <button id="auth-toggle-btn" class="auth-toggle-btn" type="button" aria-label="Teacher login">
+          <span class="auth-icon">👤</span>
+          <span id="auth-status-label">Teacher Login</span>
+        </button>
+      </div>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
     </header>
+
+    <div id="auth-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
+      <div class="modal-content">
+        <button id="close-auth-modal" class="modal-close" type="button" aria-label="Close login dialog">
+          ×
+        </button>
+
+        <div id="login-view">
+          <h3 id="auth-modal-title">Teacher Login</h3>
+          <form id="login-form">
+            <div class="form-group">
+              <label for="teacher-username">Username</label>
+              <input type="text" id="teacher-username" required />
+            </div>
+            <div class="form-group">
+              <label for="teacher-password">Password</label>
+              <input type="password" id="teacher-password" required />
+            </div>
+            <button type="submit">Log In</button>
+          </form>
+        </div>
+
+        <div id="logged-in-view" class="hidden">
+          <h3>Teacher Session</h3>
+          <p id="logged-in-text"></p>
+          <button id="logout-btn" type="button">Log Out</button>
+        </div>
+
+        <p id="auth-message" class="hidden"></p>
+      </div>
+    </div>
 
     <main>
       <section id="activities-container">
@@ -23,6 +60,9 @@
 
       <section id="signup-container">
         <h3>Sign Up for an Activity</h3>
+        <p id="teacher-only-message" class="info-box">
+          Teacher login required to register or unregister students.
+        </p>
         <form id="signup-form">
           <div class="form-group">
             <label for="email">Student Email:</label>
